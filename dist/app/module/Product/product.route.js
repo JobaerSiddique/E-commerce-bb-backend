@@ -50,7 +50,7 @@ const parseProductDataMiddleware = (req, res, next) => {
 // 2. Use it in your route
 router.post('/', (0, Auth_1.default)(user_constant_1.USER_ROLE.admin), fileUploader_1.fileUploader.upload.array('files', 5), parseProductDataMiddleware, // Use the typed middleware
 product_controller_1.ProductController.createProduct);
-router.get('/', (0, Auth_1.default)(user_constant_1.USER_ROLE.user, user_constant_1.USER_ROLE.admin), product_controller_1.ProductController.getAllProduct);
+router.get('/', product_controller_1.ProductController.getAllProduct);
 router.get('/:id', (0, Auth_1.default)(user_constant_1.USER_ROLE.user, user_constant_1.USER_ROLE.admin), product_controller_1.ProductController.getSingleProduct);
 router.delete('/:id', (0, Auth_1.default)(user_constant_1.USER_ROLE.admin), product_controller_1.ProductController.deleteProduct);
 router.put('/:id', (0, Auth_1.default)(user_constant_1.USER_ROLE.admin), product_controller_1.ProductController.updateProduct);

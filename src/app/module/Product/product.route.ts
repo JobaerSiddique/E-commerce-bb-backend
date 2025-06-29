@@ -63,7 +63,7 @@ router.post(
   ProductController.createProduct
 );
 
-  router.get('/',Auth(USER_ROLE.user,USER_ROLE.admin),ProductController.getAllProduct)
+  router.get('/',ProductController.getAllProduct)
   router.get('/:id',Auth(USER_ROLE.user,USER_ROLE.admin),ProductController.getSingleProduct)
   router.delete('/:id',Auth(USER_ROLE.admin),ProductController.deleteProduct)
   router.put('/:id',Auth(USER_ROLE.admin),ProductController.updateProduct)
