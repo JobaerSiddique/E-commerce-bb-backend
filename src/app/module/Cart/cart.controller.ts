@@ -7,7 +7,8 @@ import { CartService } from "./cart.service";
 const addToCart = catchAsync(async (req, res) => {
   const { productId, quantity } = req.body;
   const userEmail = req.user.userId; // Assuming user is attached to request from auth middleware
-    console.log(req.user.userId);
+    console.log(userEmail);
+    console.log(req.body);
   const result = await CartService.addToCartDB({
     userEmail,
     productId,
